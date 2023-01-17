@@ -121,33 +121,71 @@ double modulus(void)
 int main() 
 {
     double result;
-    char operation,choice;
-    int n,flag;
-
+    char choice;
+    int operation,n,flag=1;
+    printf("Available Operations\n1.Addition\n2.Subtraction\n3.Multiplication\n4.Division\n5.Modulus\n6.Exit\n");
     do
     {
-        printf("Enter operation (+, -, *, /, %): ");
-        scanf(" %c", &operation);
+        flag=1;
+        printf("What operation would you like to perform ?\nOperation:");
+        scanf("%d", &operation);
 
         switch(operation) 
         {
-            case '+':
-                //switch case for addition
+            int check1;
+            case 1:         
+                printf("Enter the number of numbers: ");
+                do{
+                    check1 = scanf(" %d", &n);
+                    if(check1 != 1) {
+                        printf("Error: Invalid input. Please enter a valid number:");
+                        fflush(stdin);
+                    }
+                }while(check1 != 1);
+                result = add(n);
+                if(result == 0) flag = 0;
                 break;
-            case '-':
-                //switch case for subtraction
-            case '*':
-                //switch case for multiplication
-            case '/':
-                //switch case for division
+
+            case 2:
+                printf("Enter the number of numbers: ");
+                do{
+                    check1 = scanf(" %d", &n);
+                    if(check1 != 1) {
+                        printf("Error: Invalid input. Please enter a valid number:");
+                        fflush(stdin);
+                    }
+                }while(check1 != 1);
+                result = subtract(n);
+                if(result == 0) flag = 0;
                 break;
-            case '%':
-                //switch case for modulus
+            case 3:
+                printf("Enter the number of numbers: ");
+                do{
+                    check1 = scanf(" %d", &n);
+                    if(check1 != 1) {
+                        printf("Error: Invalid input. Please enter a valid number:");
+                        fflush(stdin);
+                    }
+                }while(check1 != 1);
+                result = multiply(n);
+                if(result == 0) flag = 0;
                 break;
+            case 4:
+                result = divide();
+                if(result == 0) flag = 0;
+                break;
+            case 5:
+                result = modulus();
+                if(result == 0) flag = 0;
+                break;
+            case 6:
+            printf("Exiting The Program");
+            exit(0);
             default:
                 printf("Error: Invalid operation\n");
                 return 0;
         }
+        if(flag) printf("Result: %lf\n", result);
         if(flag) 
         {
             printf("Do you want to continue (Y/N) ?\nChoice:");
