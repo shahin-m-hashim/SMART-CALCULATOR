@@ -1,29 +1,121 @@
 #include <stdio.h>
 #include<stdlib.h>
+#include<math.h>
 
 double add(int n) 
 {
-    // addition code
+    double result = 0, num;
+    int check;
+    for(int i = 0; i < n; i++) 
+    {
+        do 
+        {
+            printf("Enter number %d: ", i+1);
+            check = scanf("%lf", &num);
+            if(check != 1) 
+            {
+                printf("Error: Invalid input. Please enter a valid number\n");
+                fflush(stdin);
+            }
+        }while(check != 1);
+        result += num;
+    }
+    return result;
 }
 
 double subtract(int n) 
 {
-   // subtraction code
+    int check;
+    double result, num;
+    printf("Enter number 1: ");
+    scanf("%lf", &result);
+    for(int i = 1; i < n; i++) 
+    {
+        do
+        {
+            printf("Enter number %d: ", i+1);
+            check = scanf("%lf", &num);
+            if(check != 1) 
+            {
+                printf("Error: Invalid input. Please enter a valid number\n");
+                return 0;
+            }
+        }while(check != 1);
+        result -= num;
+    }
+    return result;
 }
 
 double multiply(int n) 
 {
-    // multiplication code
+    int check;
+    double result = 1, num;
+    for(int i = 0; i < n; i++) 
+    {
+        do
+        {
+            printf("Enter number %d: ", i+1);
+            check = scanf("%lf", &num);
+            if(check != 1) 
+            {
+                printf("Error: Invalid input. Please enter a valid number\n");
+                return 0;
+            }
+        }while(check != 1);
+        result *= num;
+    }
+    return result;
 }
 
 double divide(void) 
 {
-    // division code
+    int check;
+    double num1, num2;
+    printf("Enter first number: ");
+    check = scanf("%lf", &num1);
+        if(check != 1) 
+        {
+            printf("Error: Invalid input. Please enter a valid number\n");
+            return 0;
+        }
+    printf("Enter second number: ");
+    check = scanf("%lf", &num2);
+        if(check != 1) 
+        {
+            printf("Error: Invalid input. Please enter a valid number\n");
+            return 0;
+        }
+    if(num2 == 0) 
+    {
+        printf("Error: Cannot divide by zero\n");
+        return 0;
+    }
+    return num1/num2;
 }
 
 double modulus(void) 
 {
-    // modulus code
+    int check;
+    double num1, num2;
+    printf("Enter first number: ");
+    check = scanf("%lf", &num1);
+        if(check != 1) 
+        {
+            printf("Error: Invalid input. Please enter a valid number\n");
+            return 0;
+        }
+    printf("Enter second number: ");
+    check = scanf("%lf", &num2);
+        if(check != 1) 
+        {
+            printf("Error: Invalid input. Please enter a valid number\n");
+            return 0;
+        }
+    if(num2 == 0) {
+        printf("Error: Cannot divide by zero\n");
+        return 0;
+    }
+    return (int)num1 % (int)num2;
 }
 
 int main() 
