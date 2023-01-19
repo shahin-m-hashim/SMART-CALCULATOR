@@ -111,6 +111,60 @@ double modulus(void)
     return (int)divident % (int)divisor;
 }
 
+// SQUARE ROOT
+
+double findSquareRoot(void) 
+{
+    
+    double result;
+    printf("Enter a number: ");
+    double num=getValidIntput();
+    result = sqrt(num);
+    return result;
+}
+
+//CUBIC ROOT
+
+double findCubicRoot(void) 
+{
+    double result;
+    printf("Enter a number: ");
+    double num=getValidIntput();
+    result = cbrt(num);
+    return result;
+}
+
+//POWER
+
+double power() 
+{
+    double base, exponent, result = 1;
+    printf("Enter base number: ");
+    base=getValidIntput();
+    printf("Enter exponent: ");
+    exponent=getValidIntput();
+
+    for(int i = 0; i < exponent; i++)
+    {
+        result *= base;
+    }
+    return result;
+}
+
+//FACTORIAL
+
+double factorial(void) 
+{
+    double n, result = 1;
+    printf("Enter a number: ");
+    n=getValidIntput();
+    for (int i = 1; i <= n; i++) 
+    {
+        result *= i;
+    }
+    return result;
+}
+
 // MAIN APPLICATION
 
 int main() 
@@ -119,7 +173,7 @@ int main()
     double result;
     int operation,n,flag;
     
-    printf("Available Operations\n1.Addition\n2.Subtraction\n3.Multiplication\n4.Division\n5.Modulus\n6.Exit\n");
+    printf("\nAvailable Operations\n1.Addition\n2.Subtraction\n3.Multiplication\n4.Division\n5.Modulus\n6.Square Root\n7.Cubic Root\n8.Exponentiation(Power Of A Number)\n9.Factorial Of A Number\n10.Exit\n");
     do
     {
         flag=1;
@@ -163,8 +217,32 @@ int main()
                 printf("\nRemainder: %lf\n",result);
                 if(result == 0) flag = 0;
                 break;
-            case 6:
                 
+            case 6:
+                result = findSquareRoot();
+                printf("\nSquare Root: %lf\n",result);
+                if(result == 0) flag = 0;
+                break;
+                
+            case 7:
+                result = findCubicRoot();
+                printf("\nCubic Root: %lf\n",result);
+                if(result == 0) flag = 0;
+                break;
+                
+            case 8:
+                result = power();
+                printf("\nResult: %lf\n",result);
+                if(result == 0) flag = 0;
+                break;
+                
+            case 9:
+                result=factorial();
+                printf("\nFactorial: %lf\n",result);
+                if(result == 0) flag = 0;
+                break;
+                
+            case 10:                
                 printf("Exiting The Program");
                 exit(0);
                 
