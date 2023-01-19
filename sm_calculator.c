@@ -4,30 +4,32 @@
 #include<ctype.h>
 #include<string.h>
 
-// INTEGER VALIDATION
+// INTPUT VALIDATION - INTEGER //
 
-int getValidInteger() 
+int getValidInput()
 {
 
     char input[100];
-    int validInteger;
-    while (1) {
+    int validInput;
+    while (1) 
+    {
         scanf("%s", input);
         int i;
         for (i = 0; i < strlen(input); i++) 
         {
-            if (!isdigit(input[i])) {
-                printf("Error: Invalid input. Please enter a valid integer:");
+            if (!isdigit(input[i])) 
+            {
+                printf("\nError: Invalid input.Please enter a valid operation:");
                 break;
             }
         }
         if (i == strlen(input)) 
         {
-            validInteger = atoi(input);
+            validInput = atoi(input);
             break;
         }
     }
-    return validInteger;
+    return validInput;
 }
 
 // ADDITION 
@@ -38,7 +40,7 @@ double add(int n)
     for(int i = 0; i < n; i++) 
     {
         printf("Enter number %d: ", i+1);
-        num = getValidInteger();
+        num = getValidIntput();
         result += num;
     }
     return result;
@@ -53,7 +55,7 @@ double add(int n)
 //     num = getValidInteger();
 //     for(int i = 1; i < n; i++) {
 //         printf("Enter number %d: ", i+1);
-//         num = getValidInteger();
+//         num = getValidIntput();
 //         result -= num;
 //     }
 //     return result;
@@ -67,7 +69,7 @@ double multiply(int n)
     for(int i = 0; i < n; i++) 
     {
         printf("Enter number %d: ", i+1);
-        num = getValidInteger();            
+        num = getValidIntput();           
         result *= num;
     }
     return result;
@@ -80,9 +82,9 @@ double divide(void)
     double divisor,divident;
 
     printf("Enter The Divident:");
-    divident=getValidInteger();
+    divident=getValidIntput();
     printf("Enter The Divisor:");   
-    divisor=getValidInteger();
+    divisor=getValidIntput();
 
     if(divisor == 0) 
     {
@@ -99,9 +101,9 @@ double modulus(void)
     double divisor,divident;
 
     printf("Enter The Divident:");
-    divident=getValidInteger();
+    divident=getValidIntput();
     printf("Enter The Divisor:");   
-    divisor=getValidInteger();
+    divisor=getValidIntput();
 
     if(divisor == 0) 
     {
@@ -178,13 +180,13 @@ int main()
     {
         flag=1;
         printf("\nWhat operation would you like to perform ?\nOperation:");
-        operation=getValidInteger();
+        operation=getValidIntput();
 
         switch(operation) 
         {
             case 1:         
                 printf("\nEnter the number of numbers: ");
-                n=getValidInteger();
+                n=getValidIntput();
                 result = add(n);
                 if(flag) printf("Result: %lf\n", result);
                 if(result == 0) flag = 0;
@@ -192,7 +194,7 @@ int main()
 
             case 2:
                 printf("\nEnter the number of numbers: ");
-                n=getValidInteger();
+                n=getValidIntput();
                 result = subtract(n);
                 if(flag) printf("Result: %lf\n", result);
                 if(result == 0) flag = 0;
@@ -200,7 +202,7 @@ int main()
                 
             case 3:
                 printf("\nEnter the number of numbers: ");
-                n=getValidInteger();
+                n=getValidIntput();
                 result = multiply(n);
                 if(flag) printf("Result: %lf\n", result);
                 if(result == 0) flag = 0;
