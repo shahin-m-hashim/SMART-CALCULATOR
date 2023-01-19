@@ -40,7 +40,7 @@ double add(int n)
     for(int i = 0; i < n; i++) 
     {
         printf("Enter number %d: ", i+1);
-        num = getValidIntput();
+        num = getValidInput();
         result += num;
     }
     return result;
@@ -63,17 +63,17 @@ double add(int n)
 
 // MULTIPLICATION - NEEDS FIXING
 
-double multiply(int n) 
-{
-    double result = 0, num;
-    for(int i = 0; i < n; i++) 
-    {
-        printf("Enter number %d: ", i+1);
-        num = getValidIntput();           
-        result *= num;
-    }
-    return result;
-}
+// double multiply(int n) 
+// {
+//     double result = 0, num;
+//     for(int i = 0; i < n; i++) 
+//     {
+//         printf("Enter number %d: ", i+1);
+//         num = getValidIntput();           
+//         result *= num;
+//     }
+//     return result;
+// }
 
 // DIVISION
 
@@ -82,9 +82,9 @@ double divide(void)
     double divisor,divident;
 
     printf("Enter The Divident:");
-    divident=getValidIntput();
+    divident=getValidInput();
     printf("Enter The Divisor:");   
-    divisor=getValidIntput();
+    divisor=getValidInput();
 
     if(divisor == 0) 
     {
@@ -101,9 +101,9 @@ double modulus(void)
     double divisor,divident;
 
     printf("Enter The Divident:");
-    divident=getValidIntput();
+    divident=getValidInput();
     printf("Enter The Divisor:");   
-    divisor=getValidIntput();
+    divisor=getValidInput();
 
     if(divisor == 0) 
     {
@@ -117,10 +117,9 @@ double modulus(void)
 
 double findSquareRoot(void) 
 {
-    
     double result;
     printf("Enter a number: ");
-    double num=getValidIntput();
+    double num=getValidInput();
     result = sqrt(num);
     return result;
 }
@@ -131,7 +130,7 @@ double findCubicRoot(void)
 {
     double result;
     printf("Enter a number: ");
-    double num=getValidIntput();
+    double num=getValidInput();
     result = cbrt(num);
     return result;
 }
@@ -142,9 +141,9 @@ double power()
 {
     double base, exponent, result = 1;
     printf("Enter base number: ");
-    base=getValidIntput();
+    base=getValidInput();
     printf("Enter exponent: ");
-    exponent=getValidIntput();
+    exponent=getValidInput();
 
     for(int i = 0; i < exponent; i++)
     {
@@ -159,12 +158,163 @@ double factorial(void)
 {
     double n, result = 1;
     printf("Enter a number: ");
-    n=getValidIntput();
+    n=getValidInput();
     for (int i = 1; i <= n; i++) 
     {
         result *= i;
     }
     return result;
+}
+
+//TRIGNOMETRIC FUNCTIONS 
+
+double TrigFunction()
+{
+    char ch;
+    int choice,flag;
+    double input,result,radians; 
+    printf("1.Sin\n2.Cos\n3.Tan\n4.Sin Inverse\n5.Cos Inverse\n6.Tan Inverse\n7.Sec\n8.Cosec\n9.Cot");
+    do
+    {
+        flag=1;
+        printf("\nSelect a Trigonometric Function:");
+        choice=getValidInput();
+        switch(choice)
+        {
+            case 1:
+                printf("Enter the angle in degrees: ");
+                input=getValidInput();
+                radians = input * (M_PI / 180);
+                result = sin(radians);
+                printf("The result in radians is: %lf\n", result);
+                printf("The result in degrees is: %lf\n", result * (180 / M_PI));
+                if(result == 0) flag = 0;
+                break;
+            case 2:
+                printf("Enter the angle in degrees: ");
+                input=getValidInput();
+                radians = input * (M_PI / 180);
+                result = cos(radians);
+                printf("The result in radians is: %lf\n", result);
+                printf("The result in degrees is: %lf\n", result * (180 / M_PI));
+                if(result == 0) flag = 0;
+                break;
+            case 3:
+                printf("Enter the angle in degrees: ");
+                input=getValidInput();
+                radians = input * (M_PI / 180);
+                result = tan(radians);
+                if(input==90 || input==270)
+                {
+                    printf("MATHEMATICAL ERROR\n");
+                    printf("The result is not defined\n");
+    
+                }
+                else
+                {
+                    printf("The result in radians is: %lf\n", result);
+                    printf("The result in degrees is: %lf\n", result * (180 / M_PI));
+                }
+                break;
+            case 4:
+                printf("Enter the angle in degrees: ");
+                input=getValidInput();
+                result = asin(input);
+                if(input>1)
+                {
+                    printf("MATHEMATICAL ERROR\n");
+                    printf("The result in radians is: %lf\n", result);
+                    printf("The result in degrees is: %lf\n", result * (180 / M_PI));
+                }
+                else
+                {
+                    printf("The result in radians is: %lf\n", result);
+                    printf("The result in degrees is: %lf\n", result * (180 / M_PI));
+                }
+                if(result == 0) flag = 0;
+                break;
+            case 5:
+                printf("Enter the angle in degrees: ");
+                input=getValidInput();
+                result = acos(input);
+                if(input>1)
+                {
+                    printf("MATHEMATICAL ERROR\n");
+                    printf("The result in radians is: %lf\n", result);
+                    printf("The result in degrees is: %lf\n", result * (180 / M_PI));
+                }
+                else
+                {
+                    printf("The result in radians is: %lf\n", result);
+                    printf("The result in degrees is: %lf\n", result * (180 / M_PI));
+                }
+                if(result == 0) flag = 0;
+                break;
+            case 6:
+                printf("Enter the angle in degrees: ");
+                input=getValidInput();
+                result = atan(input);
+                if(input>=1)
+                {
+                    printf("MATHEMATICAL ERROR\n");
+                    printf("The result in radians is: %lf\n", result);
+                    printf("The result in degrees is: %lf\n", result * (180 / M_PI));
+                }
+                else
+                {
+                    printf("The result in radians is: %lf\n", result);
+                    printf("The result in degrees is: %lf\n", result * (180 / M_PI));
+                }
+                if(result == 0) flag = 0;
+                break;
+            case 7:
+                printf("Enter the angle in degrees: ");
+                input=getValidInput();
+                radians = input * (M_PI / 180);
+                result = 1 / cos(radians);
+                printf("The result in radians is: %lf\n", result);
+                printf("The result in degrees is: %lf\n", result * (180 / M_PI));
+                if(cos(radians) == 0) flag = 0;
+            break;
+            case 8:
+                printf("Enter the angle in degrees: ");
+                input=getValidInput();
+                radians = input * (M_PI / 180);
+                result = 1 / sin(radians);
+                printf("The result in radians is: %lf\n", result);
+                printf("The result in degrees is: %lf\n", result * (180 / M_PI));
+                if(sin(radians) == 0) flag = 0;
+                break;
+            case 9:
+                printf("Enter the angle in degrees: ");
+                input=getValidInput();
+                radians = input * (M_PI / 180);
+                result = 1 / tan(radians);
+                printf("The result in radians is: %lf\n", result);
+                printf("The result in degrees is: %lf\n", result * (180 / M_PI));
+                if(result == 0) flag = 0;
+                break;
+            default:
+                printf("Error: Invalid option\n");
+                return 0;
+        }
+        if(flag) 
+        {
+            printf("Do you want to continue The Trignometric Functions(Y/N) ?\nChoice:");
+            scanf(" %c", &ch);
+            while(ch != 'Y' && ch != 'y' && ch != 'N' && ch != 'n') 
+            {
+                printf("Error: Invalid input. Please enter either 'Y' or 'N'\nChoice:");
+                fflush(stdin);
+                scanf(" %c", &ch);
+            }
+        }
+        else
+        {
+            ch = 'N';
+        }
+    }while(ch== 'Y' || ch == 'y');
+    return 0;
 }
 
 // MAIN APPLICATION
@@ -175,76 +325,81 @@ int main()
     double result;
     int operation,n,flag;
     
-    printf("\nAvailable Operations\n1.Addition\n2.Subtraction\n3.Multiplication\n4.Division\n5.Modulus\n6.Square Root\n7.Cubic Root\n8.Exponentiation(Power Of A Number)\n9.Factorial Of A Number\n10.Exit\n");
+    printf("\nAvailable Operations\n1.Addition\n2.Subtraction\n3.Multiplication\n4.Division\n5.Modulus\n6.Square Root\n7.Cubic Root\n8.Exponentiation(Power Of A Number)\n9.Factorial Of A Number\n10.Trigonometric functions\n11.Exit\n");
     do
     {
         flag=1;
         printf("\nWhat operation would you like to perform ?\nOperation:");
-        operation=getValidIntput();
+        operation=getValidInput();
 
         switch(operation) 
         {
+switch(operation) 
+        {
             case 1:         
                 printf("\nEnter the number of numbers: ");
-                n=getValidIntput();
+                n=getValidInput();
                 result = add(n);
                 if(flag) printf("Result: %lf\n", result);
                 if(result == 0) flag = 0;
                 break;
 
             case 2:
-                printf("\nEnter the number of numbers: ");
-                n=getValidIntput();
-                result = subtract(n);
+                result = subtract();
                 if(flag) printf("Result: %lf\n", result);
                 if(result == 0) flag = 0;
                 break;
-                
+        
             case 3:
                 printf("\nEnter the number of numbers: ");
-                n=getValidIntput();
+                n=getValidInput();
                 result = multiply(n);
                 if(flag) printf("Result: %lf\n", result);
                 if(result == 0) flag = 0;
                 break;
-                
+        
             case 4:
                 result = divide();
                 printf("\nQuotient: %lf\n",result);
                 if(result == 0) flag = 0;
                 break;
-                
+        
             case 5:
                 result = modulus();
                 printf("\nRemainder: %lf\n",result);
                 if(result == 0) flag = 0;
                 break;
-                
+        
             case 6:
                 result = findSquareRoot();
                 printf("\nSquare Root: %lf\n",result);
                 if(result == 0) flag = 0;
                 break;
-                
+        
             case 7:
                 result = findCubicRoot();
                 printf("\nCubic Root: %lf\n",result);
                 if(result == 0) flag = 0;
                 break;
-                
+        
             case 8:
                 result = power();
                 printf("\nResult: %lf\n",result);
                 if(result == 0) flag = 0;
                 break;
-                
+        
             case 9:
                 result=factorial();
                 printf("\nFactorial: %lf\n",result);
                 if(result == 0) flag = 0;
                 break;
+        
+            case 10:
+                TrigFunction();
+                if(result == 0) flag = 0;
+                break;
                 
-            case 10:                
+            case 11:                
                 printf("Exiting The Program");
                 exit(0);
                 
@@ -252,8 +407,6 @@ int main()
                 printf("Error: Invalid operation\n");
                 return 0;
         }
-        
-        if(flag) printf("Result: %lf\n", result);
         if(flag) 
         {
             printf("Do you want to continue (Y/N) ?\nChoice:");
