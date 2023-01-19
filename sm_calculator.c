@@ -1,6 +1,32 @@
 #include <stdio.h>
 #include<stdlib.h>
 #include<math.h>
+#include<ctype.h>
+#include<string.h>
+
+int getValidInteger() 
+{
+
+    char input[100];
+    int validInteger;
+    while (1) {
+        scanf("%s", input);
+        int i;
+        for (i = 0; i < strlen(input); i++) 
+        {
+            if (!isdigit(input[i])) {
+                printf("Error: Invalid input. Please enter a valid integer:");
+                break;
+            }
+        }
+        if (i == strlen(input)) 
+        {
+            validInteger = atoi(input);
+            break;
+        }
+    }
+    return validInteger;
+}
 
 double add(int n) 
 {
