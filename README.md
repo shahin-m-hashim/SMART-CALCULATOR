@@ -15,19 +15,19 @@ To use this calculator, you need to have a C compiler installed on your computer
 Clone the repository using the following command:
 
 # Copy code
-git clone https://github.com/shahin-m-hashim/SMART-CALCULATOR.git
+git clone https://github.com/shahin-m-hashim/SMART-CALCULATOR.git<br>
 Alternatively, you can download the code as a zip file and extract it to a local directory in your system.
 
 # Running the code
 Open a terminal or command prompt and navigate to the directory where the code is located. Run the following commands to compile and execute the code:
 
 <h3> ON WINDOWS Machines </h3> 
-* To compile the .c file and generate exe file: gcc -o program_name.exe program_name.c (to compile the .c file and generate exe file)
-* To execute the .exe file: cmd /c program_name.exe
+*To compile the .c file and generate exe file: gcc -o program_name.exe program_name.c (to compile the .c file and generate exe file)
+*To execute the .exe file: cmd /c program_name.exe
 
 <h3> On Linux and Mac Machines </h3>
-* To compile the .c file and generate an executable file: gcc -o program_name program_name.c
-* To execute the executable file: ./program_name
+*To compile the .c file and generate an executable file: gcc -o program_name program_name.c
+*To execute the executable file: ./program_name
 
 # Using the Calculator
 The calculator will present a menu with different options for mathematical operations. You can select an option by entering the corresponding number and then following the prompts for input.
