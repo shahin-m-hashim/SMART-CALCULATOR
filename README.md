@@ -22,8 +22,8 @@ Alternatively, you can download the code as a zip file and extract it to a local
 Open a terminal or command prompt and navigate to the directory where the code is located. Run the following commands to compile and execute the code:
 
 <h3> ON WINDOWS Machines </h3> 
-*To compile the .c file and generate exe file: gcc -o program_name.exe program_name.c (to compile the .c file and generate exe file)<br>
-*To execute the .exe file: cmd /c program_name.exe
+* To compile the .c file and generate exe file: gcc -o program_name.exe program_name.c (to compile the .c file and generate exe file)<br>
+* To execute the .exe file: cmd /c program_name.exe
 
 <h3> On Linux and Mac Machines </h3>
 *To compile the .c file and generate an executable file: gcc -o program_name program_name.c<br>
@@ -45,7 +45,7 @@ The calculator can perform natural log and base 10 log operations.
 The calculator can perform bitwise AND, OR, NOT and XOR operations on binary, decimal, octal and hexadecimal numbers.
 
 # Authors
-Shahin M Hashim - Initial work - Yourusername
+Shahin M Hashim - Initial work 
 
 # License
 This project is licensed under the MIT License - see the LICENSE.md file for details
