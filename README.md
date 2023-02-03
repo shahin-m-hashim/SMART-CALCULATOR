@@ -3,8 +3,6 @@
 * The program also utilizes switch cases to make it easy for users to navigate through the different functions. Additionally, the program has been optimized to include error handling, ensuring that any invalid input will be promptly dealt with, preventing any errors in the calculation process. This makes the calculator reliable and user-friendly, making it an essential tool for those in the field of engineering. Whether you need to perform quick calculations or complex operations, this calculator has you covered. With its advanced features and robust functionality, it is sure to be a valuable asset in any engineering project or research.
 * Whether you're a student, researcher, or professional, this calculator is here to help you perform mathematical calculations on a regular basis. With its advanced features and precision, it guarantees accurate results every time. Whether you're working on a complex engineering project or simply need to solve a quick mathematical problem, this Calculator has got you covered.
 
-![An example image](https://github.com/shahin-m-hashim/SMART-CALCULATOR/blob/main/smart_calc.png)
-
 ## Getting Started
 
 To use this calculator, you need to have a C compiler installed on your computer. The code has been tested on GCC and should work on other compilers as well.
